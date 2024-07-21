@@ -134,3 +134,22 @@ header img {
     left: -100%;
     /* Move back off-screen */
 }
+#backToTopBtn {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}

@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: linear-gradient(to right, #45C4B0, #9AEBA3, #DAFDBA);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    
+}
+
+main {
+    background: linear-gradient(to right, #C7FFED, white);
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0.83% 0.83% 2.5% #947777aa;
+    padding: 20px;
+}
+header img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços em branco indesejados abaixo da imagem */
+}
+header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    color: black;
+    text-align: center;
+    text-shadow: 1px 1px 0px #4a4f739c;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(33.333% - 20px);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-item img {
+    border-radius: 10px;
+    max-width: 100%;
+    border-bottom: 2px solid #ddd;
+}
+
+.product-info {
+    padding: 10px;
+}
+
+.product-info h2 {
+margin: 0;
+}
+
+.product-info p {
+    color: black;
+    text-decoration: underline;
+}
+header img {
+    max-width: 100%;
+    height: auto;}
+.col {
+    flex: 2;
+    margin: 2%;
+}
+@media (max-width: 1024px) {
+    .product-item {
+        width: calc(50% - 20px); /* Ajusta o tamanho para 2 itens por linha em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-item {
+        width: 100%; /* Ajusta o tamanho para 1 item por linha em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: 95%;
+    }
+}
+
+.container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.popup {
+    position: fixed;
+    top: 20px;
+    left: -100%;
+    /* Start off-screen */
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.popup.show {
+    left: 20px;
+    /* Move into view */
+}
+
+.popup.hide {
+    left: -100%;
+    /* Move back off-screen */
+}

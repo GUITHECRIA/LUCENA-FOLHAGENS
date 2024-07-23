@@ -7,6 +7,7 @@ html {
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -17,23 +18,26 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    
+
 }
 
 main {
     background: linear-gradient(to right, #C7FFED, white);
     width: 90%;
     margin: auto;
+    margin-bottom: auto;
     border-radius: 10px;
     box-shadow: 0.83% 0.83% 2.5% #947777aa;
     padding: 20px;
-    
+
 }
+
 header img {
     width: 100%;
-    height: auto; 
+    height: auto;
     display: block;
 }
+
 header {
     width: 100%;
     margin: 0;
@@ -63,7 +67,7 @@ h1 {
 
 .price-table th,
 .price-table td {
-padding: 15px 20px;
+    padding: 15px 20px;
 
 }
 
@@ -103,7 +107,7 @@ padding: 15px 20px;
 
 .product-item {
     display: grid;
-    grid-template-columns: repeat(auto-fit),minmax(200px,1fr);
+    grid-template-columns: repeat(auto-fit), minmax(200px, 1fr);
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -126,20 +130,25 @@ padding: 15px 20px;
 }
 
 .product-info h2 {
-margin: 0;
+    margin: 0;
 }
+
 
 .product-info p {
     color: black;
     text-decoration: underline;
 }
+
 header img {
     max-width: 100%;
-    height: auto;}
+    height: auto;
+}
+
 .col {
     flex: 2;
     margin: 2%;
 }
+
 @media (max-width: 1024px) {
     .product-item {
         width: calc(50% - 20px);
@@ -148,7 +157,7 @@ header img {
 
 @media (max-width: 768px) {
     .product-item {
-        width: calc(50% - 10px) 
+        width: calc(50% - 10px)
     }
 }
 
@@ -157,8 +166,8 @@ header img {
         width: calc(50% - 10px);
     }
 
-    main{
-    width: 95%;
+    main {
+        width: 95%;
     }
 }
 
@@ -173,7 +182,7 @@ header img {
     top: 20px;
     left: -100%;
     padding: 20px;
-    background-color: #4CAF50;
+    background-color: #020603;
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -182,13 +191,14 @@ header img {
 }
 
 .popup.show {
-    left: 20px;
-    
+    left: 10px;
+
 }
 
 .popup.hide {
     left: -100%;
 }
+
 #backToTopBtn {
     display: none;
     position: fixed;
@@ -209,6 +219,31 @@ header img {
     background-color: #555;
 }
 
-#backToTopBtn:hover {
-    background-color: #555;
+
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.quantity-controls button {
+    background-color: #0000006b;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.quantity-controls input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    font-size: 16px;
 }

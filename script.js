@@ -1,26 +1,26 @@
 window.addEventListener('load', function() {
     const popup = document.getElementById('popup-message');
     
-    // Show the popup
-    popup.classList.add('show');
+popup.classList.add('show');
     
-    // Hide the popup after 3 seconds
+
     setTimeout(function() {
         popup.classList.remove('show');
         popup.classList.add('hide');
-    }, 10000); // 3000 milliseconds = 3 seconds
+    }, 10000); 
     
-    // Remove the popup from the DOM after the transition ends
     popup.addEventListener('transitionend', function() {
         if (popup.classList.contains('hide')) {
             popup.style.display = 'none';
         }
     });
 });
-// Obtém o botão
+
+
+
 const backToTopBtn = document.getElementById("backToTopBtn");
 
-// Quando o usuário rola a página 20px para baixo, mostra o botão
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -31,8 +31,39 @@ function scrollFunction() {
     }
 }
 
-// Quando o usuário clica no botão, rola até o topo da página
+
 backToTopBtn.onclick = function() {
-    document.body.scrollTop = 0; // Para Safari
-    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
 }
+
+
+function calcularValor(element) {
+    const productItem = element.closest('.product-item');
+    const precoPorUnidade = parseFloat(productItem.getAttribute('data-preco'));
+    const quantidade = productItem.querySelector('.quantidade').value;
+    const valorTotal = quantidade * precoPorUnidade;
+
+    productItem.querySelector('.valorTotal').innerText = valorTotal.toFixed(2);
+
+    const produto = productItem.getAttribute('data-produto');
+    const mensagem = `Olá, gostaria de pedir ${quantidade} unidade(s) de ${produto}. Valor total: R$ ${valorTotal.toFixed(2)}`;
+    const link = `https://wa.me/556194634810?text=${encodeURIComponent(mensagem)}`;
+
+    productItem.querySelector('.whatsappLink').setAttribute('href', link);
+}
+
+function incrementar(button) {
+    const quantidadeInput = button.closest('.product-item').querySelector('.quantidade');
+    quantidadeInput.value = parseInt(quantidadeInput.value) + 1;
+    calcularValor(button);
+}
+
+function decrementar(button) {
+    const quantidadeInput = button.closest('.product-item').querySelector('.quantidade');
+    if (quantidadeInput.value > 0) {
+        quantidadeInput.value = parseInt(quantidadeInput.value) - 1;
+        calcularValor(button);
+    }
+}
+
